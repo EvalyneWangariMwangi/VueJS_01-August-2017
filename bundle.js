@@ -94,17 +94,28 @@ new Vue({
 		      'I wish you could serve tea to your customers'
 		    ],
 	      activeColor: 'red',
-	      fontSize: 30
+	      fontSize: 30,
+	      question: '',
+	      answer: 'Tell Me what you are looking for:',
+	      isActive: true,
+  		hasError: false,
+  		itemsInStock: ''
 		}
 	}, 
+
+	watch: {
+			question: function (val) {
+				this.answer = val + ':  is hard to find here Kiera will get back to you shortly'
+			}
+		},
 
 	components: {
 		"my-header": NavigationBar
 	},
 
 	computed: {
-		fullname: function () {
-			alert("Hey, " + appointment.name + appointment.secondname + "added")
+		swag: function () {
+			return itemsInStock = 50 - 10
 		},
 		reversedMessage: function () {
 			return this.message.split('').reverse().join('')

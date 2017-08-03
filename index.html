@@ -8,6 +8,8 @@
 
  <div id="app">
  	  <my-header></my-header>
+ 	  <p v-bind:class="{ active: isActive, 'text-danger': hasError }">Search: <input type="text" v-model="question"/></p>
+  	  <p>{{answer}}</p>
  	  <div class="slider"><p>{{ message }} {{reversedMessage}}</p></div>
 		<form class="float-center">
 			<input type="text" v-model="appointment.name" placeholder="Enter First Name">
@@ -38,6 +40,16 @@
 	    		   <p>{{ appointment.name }} - {{ appointment.phonenumber }}</p>
 	    		</li>
 	    	</ul>
+	    </div>
+
+	    <div class="row">
+	    	<div class="large-4 columns">
+	    		<h4>There are always give aways for our visitors</h4>
+	    		<p v-if="swag > 10">{{ swag }} swag in stock.</p>
+	    		<p v-else-if="swag > 0">Hurry up, there are just a few items left!</p>
+	    		<p v-else>Sorry We are Out on Swags {{ swag }} </p>
+	    	</div>
+
 	    </div>
 	    
 	<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">Enter Your Comments</div>
