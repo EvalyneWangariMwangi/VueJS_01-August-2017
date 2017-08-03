@@ -1,0 +1,28 @@
+{
+  "name": "vuejs_01-august-2017",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvalyneWangariMwangi/VueJS_01-August-2017.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvalyneWangariMwangi/VueJS_01-August-2017/issues"
+  },
+  "homepage": "https://github.com/EvalyneWangariMwangi/VueJS_01-August-2017#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.4.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "vue": "^2.4.2"
+  }
+}

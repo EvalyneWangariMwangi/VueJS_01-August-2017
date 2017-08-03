@@ -1,0 +1,16 @@
+.slider{
+	height: 300px;
+	width: 100%;
+	background: #FFE4B5;
+}
+.slider p{
+	font-style: italic;
+	font-weight: bold;
+	font-family: palatino;
+	font-size: 40px;
+	float: right;
+	padding: 20px;
+}
+form{
+	width: 80%;
+}

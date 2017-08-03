@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJS</title>
+	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
+</head>
+<body>
+
+ <div id="app">
+ 	  <my-header></my-header>
+ 	  <div class="slider"><p>{{ message }} {{reversedMessage}}</p></div>
+		<form class="float-center">
+			<input type="text" v-model="appointment.name" placeholder="Enter First Name">
+			<input type="text" v-model="appointment.secondname" placeholder="Enter Second Name">
+			<input v-model="appointment.phonenumber" type="text" placeholder="Enter Your Phone Number">
+			<p>Choose Your City of Residence</p>
+			<input type="checkbox" id="nairobi" value="Nairobi">
+			<label for="nairobi">Nairobi</label>
+			<input type="checkbox" id="mombasa" value="Mombasa">
+			<label for="mombasa">Mombasa</label>
+			<p>Select The Gender you identify with</p>
+			<input type="radio" id="female" value="female">
+			<label for="female">Female</label>
+			<input type="radio" id="male" value="male">
+			<label for="male">Male</label>
+			<p>Choose The Time For Your Appoinment:</p>
+			<select>
+				<option disabled value="Appointment">Please Book Your appointment</option>
+				<option>10 AM - 1PM</option><option>2 PM - 3 PM</option>
+				<option>3PM - 5PM</option>
+			</select>
+			<button v-on:click.prevent="addNewAppointment" type="button" class="button success">Submit</button>
+		</form>
+ 	   <h4>Appointments Booked as Follows</h4>
+	    <div class="appointments">
+	    	<ul>
+	    		<li v-for="(appointment, index) in appointments">
+	    		   <p>{{ appointment.name }} - {{ appointment.phonenumber }}</p>
+	    		</li>
+	    	</ul>
+	    </div>
+	    
+	<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">Enter Your Comments</div>
+	 <ul>
+    <li
+      is="individual-comment"
+      v-for="comment in comments"
+      v-bind:commentpost="comment">
+    </li>
+  	</ul>
+  <input
+    v-model="newComment"
+    v-on:keyup.enter="addComment"
+    placeholder="Add a comment">
+    <br>
+    <individual-comment v-bind:commentpost="newComment"></individual-comment>
+ </div>
+
+
+<script type="text/javascript" src="./bundle.js"></script>
+</body>
+
+<!-- <script type="text/javascript" src="node_modules/foundation-sites/dist/js/foundation.min.js"></script> -->
+<!-- <script>
+$(document).foundation();
+</script> -->
+
+</html>
